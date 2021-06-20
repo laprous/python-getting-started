@@ -9,15 +9,51 @@
       <img src="{% static 'lang-logo.png'%}">
     </a>
     <h1>Video Classification With VGG16</h1>
-    <a type="button" class="btn btn-lg btn-default" href="{% url 'upload-video' %}"><span class="glyphicon glyphicon-download"></span>Upload Video</a>
+    <a type="button" class="btn btn-lg btn-default" href=""><span class="glyphicon glyphicon-download"></span>Upload Video</a>
   </div>
 </div>
 <div class="container">
   <div class="alert alert-info text-center" role="alert">
-    Upload your own Video(s)<a href="https://devcenter.heroku.com/articles/getting-started-with-python" class="alert-link">To Get Started</a>
+    Upload your own Video(s)<a class="alert-link">To Get Started</a>
   </div>
   <hr>
   <div class="row">
+    <div class='container'>
+
+      <h1>
+          Upload Video
+      </h1>
+      <div class="card">
+          <form action="predictVideo" method="post" enctype="multipart/form-data">
+              {%csrf_token%}    
+               <div class="form-group row">
+                      <div class='col-md-6'>
+                         <label>
+                             Video
+                         </label>
+                         <input type='file' class='form-control' name='filePath' accept="*/*" required>
+                      </div>  
+               </div>
+  
+           
+               <div class='form-group'>
+                   <div>
+                       <input type='submit' class='btn btn-primary btn-success' value='Upload' name='submit'>
+                      
+                   </div>
+               </div>
+          </form>
+      </div>
+      <hr>
+      <br>
+      <div class="alert alert-info text-center" role="alert">Classification Is:{{ predictatedLabel }}
+        </a>
+        <hr>
+        <img src={{filePathName}} alt='imagename'>
+        {{filePathName}}
+      </div>
+      <hr>
+  </div>
    
   </div> <!-- row -->
  

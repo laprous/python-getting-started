@@ -7,17 +7,14 @@
         Upload Video
     </h1>
     <div class="card">
-        <form action="" method="post" enctype="multipart/form-data"{%csrf_token%}>
+        <form action="predictVideo" method="post" enctype="multipart/form-data">
+            {%csrf_token%}    
              <div class="form-group row">
-                 <div class="col-md-6 mb-4 mb-lg-0">
-                     <label>Video Name</label>
-                     <input type='text' name='video_name' class="form-control" placeholder='Video Name' required>
-                </div>
                     <div class='col-md-6'>
                        <label>
                            Video
                        </label>
-                       <input type='file' class='form-control' name='video' accept="*/*" required>
+                       <input type='file' class='form-control' name='filePath' accept="*/*" required>
                     </div>  
              </div>
 
@@ -25,9 +22,7 @@
              <div class='form-group'>
                  <div>
                      <input type='submit' class='btn btn-primary btn-success' value='Upload' name='submit'>
-                     {% if upload_message %}
-                        <p style="color:green;text-align:center;font-weight:bold">{{ application_message }}</p>
-                     {% endif %}
+                    
                  </div>
              </div>
         </form>
