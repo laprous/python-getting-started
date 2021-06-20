@@ -26,7 +26,7 @@ labelInfo = json.loads(labelInfo)
 #with model_graph.as_default():
 #    tf_session = Session()
 #    with tf_session.as_default():
-model=load_model('./model/MobileNetModelImagenet.h5')
+model=load_model('./model/classification.h5')
 
 
 # Create your views here.
